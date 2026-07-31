@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Una Despedida Especial — Sarah · 6 Sep 2026</title>
+  <meta name="description" content="Celebramos el próximo capítulo de Sarah mientras comienza su nueva aventura en Londres.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- NAV -->
+  <nav class="nav" id="nav">
+    <span class="nav-brand">Golden Hour</span>
+    <a href="#rsvp" class="nav-cta">Confirmar asistencia</a>
+  </nav>
+
+  <!-- HERO -->
+  <section class="hero" id="inicio">
+    <canvas id="fairy-lights"></canvas>
+    <div class="hero-sun"></div>
+    <div class="hero-content" data-animate>
+      <p class="hero-eyebrow">con amor &amp; gratitud</p>
+      <h1 class="hero-title">Una Despedida<br><em>Dorada</em></h1>
+      <p class="hero-subtitle">
+        Celebramos el próximo capítulo de <strong>Sarah</strong><br>
+        mientras comienza su nueva aventura en Londres
+      </p>
+      <div class="hero-ornament">✦</div>
+      <p class="hero-date">Domingo · 6 de Septiembre, 2026 · 13:00 hs</p>
+      <a href="#rsvp" class="btn-hero">Confirmar asistencia</a>
+    </div>
+    <div class="hero-scroll-hint">
+      <span>Deslizar</span>
+      <div class="scroll-line"></div>
+    </div>
+  </section>
+
+  <!-- DETALLES DEL EVENTO -->
+  <section class="details" id="detalles">
+    <div class="container">
+      <header class="section-header" data-animate>
+        <p class="section-eyebrow">el evento</p>
+        <h2 class="section-title">Los Detalles</h2>
+        <p class="section-subtitle">Todo lo que necesitás saber para esta tarde especial</p>
+      </header>
+      <div class="details-grid">
+
+        <div class="detail-card" data-animate>
+          <div class="detail-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+              <rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/>
+            </svg>
+          </div>
+          <p class="detail-label">Cuándo</p>
+          <p class="detail-value">Domingo, 6 de Septiembre</p>
+          <p class="detail-highlight">13:00 hs</p>
+        </div>
+
+        <div class="detail-card featured" data-animate>
+          <div class="detail-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/>
+            </svg>
+          </div>
+          <p class="detail-label">Dónde</p>
+          <p class="detail-value">The Rooftop at Sunset Point</p>
+          <p class="detail-address">Av. del Libertador 5280, Palermo, CABA</p>
+          <a href="https://www.google.com/maps/search/?api=1&query=Av+del+Libertador+5280+Palermo+Buenos+Aires" target="_blank" rel="noopener" class="map-link">
+            <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+            Ver en Google Maps
+          </a>
+        </div>
+
+        <div class="detail-card" data-animate>
+          <div class="detail-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M20 12V22H4V12"/><path d="M22 7H2v5h20V7z"/><path d="M12 22V7"/><path d="M12 7H7.5a2.5 2.5 0 0 1 0-5C11 2 12 7 12 7z"/><path d="M12 7h4.5a2.5 2.5 0 0 0 0-5C13 2 12 7 12 7z"/>
+            </svg>
+          </div>
+          <p class="detail-label">Qué traer</p>
+          <p class="detail-value">Tus recuerdos favoritos con Sarah</p>
+          <p class="detail-address">...y una campera para la tarde. ¡Vamos a estar en la terraza!</p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- RSVP + CUENTA REGRESIVA -->
+  <section class="rsvp-section" id="rsvp">
+    <div class="container rsvp-layout">
+
+      <div class="countdown-panel" data-animate>
+        <p class="section-eyebrow light">faltan solo</p>
+        <h2 class="countdown-title">La Cuenta<br>Regresiva</h2>
+        <div class="countdown">
+          <div class="countdown-unit">
+            <span class="countdown-num" id="days">00</span>
+            <span class="countdown-label">días</span>
+          </div>
+          <span class="countdown-sep">:</span>
+          <div class="countdown-unit">
+            <span class="countdown-num" id="hours">00</span>
+            <span class="countdown-label">horas</span>
+          </div>
+          <span class="countdown-sep">:</span>
+          <div class="countdown-unit">
+            <span class="countdown-num" id="minutes">00</span>
+            <span class="countdown-label">min</span>
+          </div>
+          <span class="countdown-sep">:</span>
+          <div class="countdown-unit">
+            <span class="countdown-num" id="seconds">00</span>
+            <span class="countdown-label">seg</span>
+          </div>
+        </div>
+        <p class="countdown-sub">para despedirnos de la mejor manera</p>
+      </div>
+
+      <div class="rsvp-panel" data-animate>
+        <p class="section-eyebrow">confirmación</p>
+        <h2 class="section-title">¿Nos acompañás?</h2>
+        <p class="rsvp-note">Confirmá tu asistencia antes del 30 de Agosto</p>
+        <form id="rsvp-form" class="form" novalidate>
+          <div class="form-group">
+            <label class="form-label" for="rsvp-name">Tu nombre completo</label>
+            <input class="form-input" type="text" id="rsvp-name" name="name" placeholder="Ingresá tu nombre" required>
+          </div>
+          <div class="form-group">
+            <label class="form-label" for="rsvp-guests">¿Cuántos vienen?</label>
+            <select class="form-input" id="rsvp-guests" name="guests">
+              <option value="1">Solo yo (1 persona)</option>
+              <option value="2">Venimos 2</option>
+              <option value="3">Venimos 3</option>
+              <option value="4">Venimos 4 o más</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label class="form-label">¿Podrás venir?</label>
+            <div class="radio-group">
+              <label class="radio-option">
+                <input type="radio" name="attendance" value="yes" checked>
+                <span class="radio-custom"></span>
+                <span>¡Allí voy a estar! 🎉</span>
+              </label>
+              <label class="radio-option">
+                <input type="radio" name="attendance" value="no">
+                <span class="radio-custom"></span>
+                <span>No podré ir esta vez 😢</span>
+              </label>
+            </div>
+          </div>
+          <button type="submit" class="btn-primary" id="rsvp-submit">Confirmar asistencia</button>
+          <div id="rsvp-message" class="form-message hidden"></div>
+        </form>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- GALERÍA DE RECUERDOS -->
+  <section class="gallery" id="recuerdos">
+    <div class="container">
+      <header class="section-header" data-animate>
+        <p class="section-eyebrow">momentos juntas</p>
+        <h2 class="section-title">Una vida de recuerdos</h2>
+        <p class="section-subtitle">Momentos que siempre llevaremos en el corazón</p>
+      </header>
+    </div>
+    <div class="carousel-wrapper" data-animate>
+      <button class="carousel-btn" id="prev-btn" aria-label="Anterior">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><polyline points="15 18 9 12 15 6"/></svg>
+      </button>
+      <div class="carousel-viewport">
+        <div class="carousel-track" id="carousel-track"></div>
+      </div>
+      <button class="carousel-btn" id="next-btn" aria-label="Siguiente">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><polyline points="9 18 15 12 9 6"/></svg>
+      </button>
+    </div>
+    <div class="carousel-dots" id="carousel-dots"></div>
+  </section>
+
+  <!-- DEJÁ TU MENSAJE -->
+  <section class="notes-section" id="notas">
+    <div class="container notes-layout">
+
+      <div class="notes-intro" data-animate>
+        <p class="section-eyebrow">para Sarah</p>
+        <h2 class="section-title">Dejá tu mensaje</h2>
+        <p class="notes-description">
+          Escribile unas palabras a Sarah. Serán parte de un libro de recuerdos especial
+          que le regalamos en su despedida. Cada palabra importa. 💛
+        </p>
+        <div class="notes-deco">
+          <div class="notes-line"></div>
+          <span>✦</span>
+          <div class="notes-line"></div>
+        </div>
+      </div>
+
+      <form id="note-form" class="form notes-form" data-animate novalidate>
+        <div class="form-group">
+          <label class="form-label" for="note-author">Tu nombre</label>
+          <input class="form-input" type="text" id="note-author" name="noteName" placeholder="¿Quién escribe?" required>
+        </div>
+        <div class="form-group">
+          <label class="form-label" for="note-body">Tu mensaje para Sarah</label>
+          <textarea class="form-input form-textarea" id="note-body" name="noteMessage" rows="6"
+            placeholder="Escríbele algo especial: un recuerdo, un deseo, una promesa..." required></textarea>
+        </div>
+        <button type="submit" class="btn-primary" id="note-submit">Enviar mensaje ✉️</button>
+        <div id="note-message" class="form-message hidden"></div>
+      </form>
+
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="container footer-content">
+      <span class="footer-ornament">✦ ✦ ✦</span>
+      <h2 class="footer-title">Únete a nosotros</h2>
+      <p class="footer-event">Domingo 6 de Septiembre, 2026 · 13:00 hs</p>
+      <p class="footer-venue">The Rooftop at Sunset Point · Av. del Libertador 5280, Palermo, CABA</p>
+      <a href="mailto:silvina.stani@gmail.com" class="footer-contact">silvina.stani@gmail.com</a>
+      <div class="footer-rule"></div>
+      <p class="footer-closing">Con amor &amp; gratitud</p>
+      <p class="footer-hosts">Organizado con todo el corazón por sus amigas</p>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
