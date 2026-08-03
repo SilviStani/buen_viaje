@@ -792,6 +792,58 @@ select.form-input {
 }
 
 /* ================================================
+   MURO DE MENSAJES
+   ================================================ */
+.messages-wall {
+  background: linear-gradient(135deg, #fef9f3 0%, #fdfcfa 100%);
+  padding: 80px 0;
+}
+.messages-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 24px;
+  margin-top: 40px;
+}
+.message-card {
+  background: var(--white);
+  padding: 28px;
+  border-radius: var(--r-lg);
+  box-shadow: var(--sh-sm);
+  border-left: 4px solid var(--gold);
+  transition: transform .3s ease, box-shadow .3s ease;
+}
+.message-card:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--sh-md);
+}
+.message-text {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.1rem;
+  line-height: 1.6;
+  color: var(--text);
+  margin-bottom: 16px;
+  font-style: italic;
+}
+.message-author {
+  font-weight: 600;
+  color: var(--gold);
+  font-size: .95rem;
+  margin-bottom: 8px;
+}
+.message-date {
+  font-size: .8rem;
+  color: var(--text-muted);
+}
+.messages-loading,
+.messages-empty {
+  text-align: center;
+  color: var(--text-muted);
+  padding: 40px;
+  font-style: italic;
+  grid-column: 1 / -1;
+}
+
+/* ================================================
    RESPONSIVE
    ================================================ */
 @media (max-width: 960px) {

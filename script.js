@@ -2,7 +2,7 @@
 
 // ─── Configuración ────────────────────────────────────────────────────────────
 // Reemplazá esta URL con la de tu Google Apps Script (ver CONFIGURACION_SHEETS.md)
-const SCRIPT_URL = 'YOUR_GOOGLE_APPS_SCRIPT_URL_HERE';
+const SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbyr27nIEA0EV-TdgaS70ZKkhk7dS_gn35_NDWKIqu-D3ItugLbY6Tn6raGJuY_87nuo/exec';
 
 // Fecha del evento: Domingo 6 de Septiembre 2026, 13:00 hs (UTC-3, Buenos Aires)
 const EVENT_DATE = new Date('2026-09-06T13:00:00-03:00');
@@ -286,6 +286,43 @@ function initForms() {
         setLoading(btn, false, 'Enviar mensaje ✉️');
       }
     });
+  }
+
+  // Cargar y refrescar mensajes del Sheet
+  loadMessages();
+  setInterval(loadMessages, 10000); // Refrescar cada 10 segundos
+}
+
+async function loadMessages() {
+  if (SCRIPT_URL === 'YOUR_GOOGLE_APPS_SCRIPT_URL_HERE') {
+    return; // No cargar en modo demo
+  }
+  
+  try {
+    const response = await fetch(SCRIPT_URL);
+    const data = await response.json();
+    const container = document.getElementById('messages-container');
+    
+    if (!data.messages || data.messages.length === 0) {
+      container.innerHTML = '<p class="messages-empty">Aún no hay mensajes... ¡Sé el primero! 💛</p>';
+      return;
+    }
+    
+    container.innerHTML = data.messages.map(msg => `
+      <div class="message-card" data-animate>
+        <p class="message-text">"${msg.mensaje}"</p>
+        <p class="message-author">— ${msg.nombre}</p>
+        <p class="message-date">${msg.fecha}</p>
+      </div>
+    `).join('');
+    
+    // Aplicar animación a las nuevas tarjetas
+    container.querySelectorAll('[data-animate]').forEach(el => {
+      el.classList.add('visible');
+    });
+    
+  } catch (err) {
+    console.error('Error cargando mensajes:', err);
   }
 }
 
