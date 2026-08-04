@@ -361,6 +361,30 @@ section { padding: 100px 0; }
   margin-top: 8px;
 }
 .detail-card.featured .detail-address { color: rgba(255, 255, 255, .55); }
+.detail-card--fun {
+  grid-column: 1 / -1;
+  background: linear-gradient(135deg, var(--gold) 0%, var(--orange) 100%);
+  color: var(--white);
+  border: none;
+  box-shadow: 0 8px 32px rgba(217, 119, 6, .35);
+  display: flex;
+  align-items: center;
+  gap: 32px;
+  flex-wrap: wrap;
+}
+.detail-card--fun:hover { box-shadow: 0 12px 44px rgba(217, 119, 6, .45); }
+.detail-card--fun .detail-icon {
+  background: rgba(255, 255, 255, .18);
+  color: var(--white);
+  flex-shrink: 0;
+}
+.detail-card--fun .detail-label { color: rgba(255, 255, 255, .75); }
+.detail-card--fun .detail-address { color: rgba(255, 255, 255, .8); }
+.detail-value--highlight {
+  font-size: 1.35rem;
+  font-weight: 700;
+  color: var(--white);
+}
 .map-link {
   display: inline-flex;
   align-items: center;
