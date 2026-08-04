@@ -9,30 +9,15 @@ const EVENT_DATE = new Date('2026-09-06T13:00:00-03:00');
 
 // ─── Datos del carrusel ───────────────────────────────────────────────────────
 const POLAROIDS = [
-  {
-    caption: 'Tarde de playa, verano 2023',
-    gradient: 'linear-gradient(145deg, #f6d365, #fda085)'
-  },
-  {
-    caption: 'Nuestro viaje que nunca olvidaremos',
-    gradient: 'linear-gradient(145deg, #84fab0, #8fd3f4)'
-  },
-  {
-    caption: 'Cumpleaños sorpresa, Octubre 2024',
-    gradient: 'linear-gradient(145deg, #f093fb, #f5576c)'
-  },
-  {
-    caption: 'Nuestros jueves de café y charlas',
-    gradient: 'linear-gradient(145deg, #c79081, #dfa579)'
-  },
-  {
-    caption: 'Noche de risas y baile',
-    gradient: 'linear-gradient(145deg, #a18cd1, #fbc2eb)'
-  },
-  {
-    caption: 'Simplemente nosotras ✨',
-    gradient: 'linear-gradient(145deg, #ffecd2, #fcb69f)'
-  },
+  { src: 'images/Conferencia.jpeg',        caption: 'Conferencia' },
+  { src: 'images/ReunionPrecursores.jpeg', caption: 'Reunión de Precursores' },
+  { src: 'images/Asamblea.jpeg',           caption: 'Asamblea' },
+  { src: 'images/boda.jpeg',               caption: 'La boda' },
+  { src: 'images/boda2.jpeg',              caption: 'La boda' },
+  { src: 'images/civil.jpeg',              caption: 'El civil' },
+  { src: 'images/anillo.jpeg',             caption: 'El anillo' },
+  { src: 'images/compromiso.jpeg',         caption: 'El compromiso' },
+  { src: 'images/novios.jpeg',             caption: 'Los novios' },
 ];
 
 // ─── Init ─────────────────────────────────────────────────────────────────────
@@ -148,7 +133,10 @@ function buildCarousel() {
 
     const photo = document.createElement('div');
     photo.className = 'polaroid-photo';
-    photo.style.background = p.gradient;
+    const img = document.createElement('img');
+    img.src = p.src;
+    img.alt = p.caption;
+    photo.appendChild(img);
 
     const caption = document.createElement('p');
     caption.className = 'polaroid-caption';
@@ -211,8 +199,11 @@ function goTo(index) {
   const viewport = document.querySelector('.carousel-viewport');
   if (!track || !viewport) return;
 
+  const card   = track.querySelector('.polaroid');
+  const cardW  = card ? card.offsetWidth : CARD_W;
+  const step   = cardW + CARD_GAP;
   const viewW  = viewport.offsetWidth;
-  const offset = viewW / 2 - CARD_W / 2 - index * CARD_STEP;
+  const offset = viewW / 2 - cardW / 2 - index * step;
   track.style.transform = `translateX(${offset}px)`;
 
   document.querySelectorAll('.dot').forEach((d, i) => {
@@ -278,10 +269,10 @@ function initForms() {
       setLoading(btn, true, 'Enviando...');
       try {
         await submit({ type: 'nota', name, message });
-        showMsg(msgEl, 'success', '¡Tu mensaje fue guardado! Sarah lo leerá con mucho amor 💛');
+        showMsg(msgEl, 'success', '¡Tu mensaje fue guardado! los chicos lo leerán con mucho amor 💛');
         noteForm.reset();
       } catch {
-        showMsg(msgEl, 'error', 'Hubo un error. Intentá de nuevo o escribinos a silvina.stani@gmail.com');
+        showMsg(msgEl, 'error', 'Hubo un error. Intentá de nuevo');
       } finally {
         setLoading(btn, false, 'Enviar mensaje ✉️');
       }
