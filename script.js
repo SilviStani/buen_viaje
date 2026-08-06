@@ -303,7 +303,7 @@ async function loadMessages() {
       <div class="message-card" data-animate>
         <p class="message-text">"${msg.mensaje}"</p>
         <p class="message-author">— ${msg.nombre}</p>
-        <p class="message-date">${msg.fecha}</p>
+        <!-- <p class="message-date">${msg.fecha}</p> -->
       </div>
     `).join('');
     
