@@ -421,6 +421,25 @@ section { padding: 100px 0; }
   font-weight: 700;
   color: var(--white);
 }
+.btn-estilo {
+  display: inline-block;
+  margin-top: 20px;
+  padding: 12px 24px;
+  background: rgba(255, 255, 255, .18);
+  color: var(--white);
+  font-size: .78rem;
+  font-weight: 600;
+  letter-spacing: .12em;
+  text-transform: uppercase;
+  border-radius: 100px;
+  border: 1.5px solid rgba(255, 255, 255, .5);
+  transition: background .2s, border-color .2s, transform .2s;
+}
+.btn-estilo:hover {
+  background: rgba(255, 255, 255, .3);
+  border-color: var(--white);
+  transform: translateY(-2px);
+}
 .map-link {
   display: inline-flex;
   align-items: center;

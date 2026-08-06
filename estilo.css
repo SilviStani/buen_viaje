@@ -1,0 +1,208 @@
+/* ================================================
+   ESTILO PAGE — estilo.css
+   ================================================ */
+
+/* --- Hero ---------------------------------------- */
+.estilo-hero {
+  position: relative;
+  min-height: 52vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  background:
+    radial-gradient(ellipse 80% 60% at 50% 100%, rgba(168, 85, 247, .35), transparent),
+    radial-gradient(ellipse 50% 40% at 70% 80%,  rgba(249, 115, 22, .4), transparent),
+    linear-gradient(160deg,
+      #0f0a1a 0%,
+      #1a0a2e 30%,
+      #2d1057 55%,
+      #6b21a8 80%,
+      #9333ea 100%
+    );
+}
+.estilo-hero-bg {
+  position: absolute;
+  inset: 0;
+  background-image:
+    radial-gradient(circle 1px at 20% 30%, rgba(255,255,255,.6) 0%, transparent 0%),
+    radial-gradient(circle 1px at 65% 20%, rgba(255,255,255,.5) 0%, transparent 0%),
+    radial-gradient(circle 1.5px at 80% 60%, rgba(255,255,255,.7) 0%, transparent 0%),
+    radial-gradient(circle 1px at 35% 70%, rgba(255,255,255,.4) 0%, transparent 0%),
+    radial-gradient(circle 1px at 90% 40%, rgba(255,255,255,.5) 0%, transparent 0%),
+    radial-gradient(circle 2px at 10% 80%, rgba(255,215,0,.8) 0%, transparent 0%),
+    radial-gradient(circle 1.5px at 55% 85%, rgba(255,215,0,.6) 0%, transparent 0%);
+  pointer-events: none;
+}
+.estilo-hero-content {
+  position: relative;
+  z-index: 2;
+  text-align: center;
+  color: #fff;
+  padding: 120px 24px 60px;
+  max-width: 640px;
+}
+.estilo-hero-title {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(3rem, 9vw, 5.5rem);
+  font-weight: 700;
+  line-height: 1.08;
+  margin: 16px 0 24px;
+  text-shadow: 0 2px 30px rgba(0,0,0,.4);
+}
+.estilo-hero-title em {
+  font-style: italic;
+  font-weight: 400;
+  font-size: .55em;
+  color: #e9d5ff;
+}
+.estilo-hero-sub {
+  font-size: clamp(.95rem, 2vw, 1.1rem);
+  font-weight: 300;
+  color: rgba(255,255,255,.8);
+  line-height: 1.75;
+}
+
+/* --- Looks grid ---------------------------------- */
+.looks-section { background: var(--cream); }
+.looks-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+}
+.look-card {
+  background: var(--white);
+  border-radius: var(--r-lg);
+  padding: 36px 28px;
+  box-shadow: var(--sh-sm);
+  border: 1px solid var(--cream-200);
+  transition: transform .28s, box-shadow .28s;
+  opacity: 0;
+  transform: translateY(20px);
+}
+.look-card.visible {
+  opacity: 1;
+  transform: translateY(0);
+  transition: opacity .5s ease, transform .5s ease, box-shadow .28s;
+}
+.look-card:hover {
+  transform: translateY(-5px);
+  box-shadow: var(--sh-md);
+}
+.look-card--featured {
+  background: linear-gradient(145deg, #581c87 0%, #3b0764 100%);
+  color: var(--white);
+  border: none;
+  box-shadow: 0 8px 32px rgba(88, 28, 135, .4);
+}
+.look-card--featured:hover { box-shadow: 0 12px 44px rgba(88, 28, 135, .5); }
+.look-card--wildcard {
+  background: linear-gradient(145deg, var(--gold) 0%, var(--orange) 100%);
+  color: var(--white);
+  border: none;
+  box-shadow: 0 8px 32px rgba(217, 119, 6, .35);
+}
+.look-card--wildcard:hover { box-shadow: 0 12px 44px rgba(217, 119, 6, .45); }
+.look-emoji {
+  font-size: 3rem;
+  margin-bottom: 16px;
+  line-height: 1;
+}
+.look-name {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.25rem;
+  font-weight: 700;
+  margin-bottom: 4px;
+  color: var(--text);
+}
+.look-card--featured .look-name,
+.look-card--wildcard .look-name { color: var(--white); }
+.look-era {
+  font-size: .72rem;
+  font-weight: 600;
+  letter-spacing: .15em;
+  text-transform: uppercase;
+  color: var(--gold);
+  margin-bottom: 14px;
+}
+.look-card--featured .look-era { color: #d8b4fe; }
+.look-card--wildcard .look-era { color: rgba(255,255,255,.75); }
+.look-desc {
+  font-size: .93rem;
+  color: var(--text-mid);
+  line-height: 1.65;
+  margin-bottom: 18px;
+}
+.look-card--featured .look-desc,
+.look-card--wildcard .look-desc { color: rgba(255,255,255,.8); }
+.look-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+.look-tags span {
+  font-size: .7rem;
+  font-weight: 600;
+  letter-spacing: .08em;
+  padding: 4px 10px;
+  border-radius: 100px;
+  background: var(--cream-100);
+  color: var(--text-muted);
+}
+.look-card--featured .look-tags span {
+  background: rgba(255,255,255,.12);
+  color: rgba(255,255,255,.8);
+}
+.look-card--wildcard .look-tags span {
+  background: rgba(255,255,255,.2);
+  color: rgba(255,255,255,.9);
+}
+
+/* --- Regla de oro -------------------------------- */
+.regla-section { background: var(--cream-100); padding: 60px 0; }
+.regla-card {
+  text-align: center;
+  max-width: 520px;
+  margin: 0 auto;
+  padding: 48px 32px;
+  background: var(--white);
+  border-radius: var(--r-xl);
+  box-shadow: var(--sh-md);
+  opacity: 0;
+  transform: translateY(16px);
+  transition: opacity .5s, transform .5s;
+}
+.regla-card.visible { opacity: 1; transform: translateY(0); }
+.regla-icon { font-size: 2.8rem; display: block; margin-bottom: 16px; }
+.regla-card h3 {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--text);
+  margin-bottom: 12px;
+}
+.regla-card p {
+  font-size: 1rem;
+  color: var(--text-mid);
+  line-height: 1.7;
+}
+
+/* --- Playlist ------------------------------------ */
+.playlist-section { background: var(--cream); }
+.playlist-embed {
+  max-width: 760px;
+  margin: 0 auto;
+  opacity: 0;
+  transform: translateY(16px);
+  transition: opacity .5s, transform .5s;
+}
+.playlist-embed.visible { opacity: 1; transform: translateY(0); }
+
+/* --- Responsive ---------------------------------- */
+@media (max-width: 960px) {
+  .looks-grid { grid-template-columns: 1fr 1fr; }
+}
+@media (max-width: 600px) {
+  .looks-grid { grid-template-columns: 1fr; }
+  .estilo-hero-content { padding-top: 100px; }
+}

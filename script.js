@@ -273,6 +273,7 @@ function initForms() {
         await submit({ type: 'nota', name, message });
         showMsg(msgEl, 'success', '¡Tu mensaje fue guardado! los chicos lo leerán con mucho amor 💛');
         noteForm.reset();
+        launchConfetti();
       } catch {
         showMsg(msgEl, 'error', 'Hubo un error. Intentá de nuevo');
       } finally {
@@ -345,6 +346,16 @@ function showMsg(el, type, text) {
   el.classList.remove('hidden');
   clearTimeout(el._timer);
   el._timer = setTimeout(() => el.classList.add('hidden'), 7000);
+}
+
+// ─── Confetti ─────────────────────────────────────────────────────────────────
+function launchConfetti() {
+  if (typeof confetti === 'undefined') return;
+  const colors = ['#D97706', '#F59E0B', '#EA580C', '#FCD34D', '#FFFFFF'];
+  confetti({ particleCount: 80,  spread: 60,  origin: { x: 0.3, y: 0.6 }, colors });
+  setTimeout(() =>
+    confetti({ particleCount: 80, spread: 60, origin: { x: 0.7, y: 0.6 }, colors }), 150
+  );
 }
 
 // ─── Animaciones al hacer scroll ──────────────────────────────────────────────
