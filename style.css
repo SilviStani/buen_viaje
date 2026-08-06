@@ -130,11 +130,12 @@ input, select, textarea { font-family: inherit; font-size: inherit; }
    ================================================ */
 .hero {
   position: relative;
-  height: 100vh;
-  min-height: 620px;
+  min-height: 100vh;
+  min-height: 100svh;
   display: flex;
   align-items: center;
   justify-content: center;
+  padding: 100px 0 80px;
   overflow: hidden;
   background:
     radial-gradient(ellipse 90% 50% at 50% 100%, rgba(249, 115, 22, .55), transparent),
@@ -950,4 +951,5 @@ select.form-input {
   .hero-scroll-hint { bottom: 20px; }
   .rsvp-panel { padding: 32px 24px; }
   .details-grid { max-width: 100%; }
+  .hero { padding: 110px 0 90px; }
 }
