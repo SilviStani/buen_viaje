@@ -90,24 +90,26 @@ function initFairyLights() {
 
 // ─── Countdown ────────────────────────────────────────────────────────────────
 function initCountdown() {
-  const $days    = document.getElementById('days');
-  const $hours   = document.getElementById('hours');
-  const $minutes = document.getElementById('minutes');
-  const $seconds = document.getElementById('seconds');
-  if (!$days) return;
+  const els = {
+    days:    [document.getElementById('days'),         document.getElementById('hero-days')],
+    hours:   [document.getElementById('hours'),        document.getElementById('hero-hours')],
+    minutes: [document.getElementById('minutes'),      document.getElementById('hero-minutes')],
+    seconds: [document.getElementById('seconds'),      document.getElementById('hero-seconds')],
+  };
 
   function pad(n) { return String(n).padStart(2, '0'); }
+  function set(key, val) { els[key].forEach(el => { if (el) el.textContent = val; }); }
 
   function tick() {
     const diff = EVENT_DATE.getTime() - Date.now();
     if (diff <= 0) {
-      [$days, $hours, $minutes, $seconds].forEach(el => (el.textContent = '00'));
+      Object.keys(els).forEach(k => set(k, '00'));
       return;
     }
-    $days.textContent    = pad(Math.floor(diff / 86400000));
-    $hours.textContent   = pad(Math.floor((diff % 86400000) / 3600000));
-    $minutes.textContent = pad(Math.floor((diff % 3600000)  / 60000));
-    $seconds.textContent = pad(Math.floor((diff % 60000)    / 1000));
+    set('days',    pad(Math.floor(diff / 86400000)));
+    set('hours',   pad(Math.floor((diff % 86400000) / 3600000)));
+    set('minutes', pad(Math.floor((diff % 3600000)  / 60000)));
+    set('seconds', pad(Math.floor((diff % 60000)    / 1000)));
   }
 
   tick();

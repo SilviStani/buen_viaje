@@ -90,6 +90,40 @@ input, select, textarea { font-family: inherit; font-size: inherit; }
   background: rgba(255, 255, 255, .1);
   border-color: rgba(255, 255, 255, .8);
 }
+.hero-mini-countdown {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  margin-bottom: 32px;
+}
+.hero-cd-unit {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2px;
+}
+.hero-cd-unit span {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(1.4rem, 4vw, 2rem);
+  font-weight: 700;
+  color: var(--white);
+  line-height: 1;
+}
+.hero-cd-unit em {
+  font-style: normal;
+  font-size: .6rem;
+  font-weight: 500;
+  letter-spacing: .18em;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, .5);
+}
+.hero-cd-sep {
+  font-size: 1.2rem;
+  color: rgba(255, 255, 255, .3);
+  font-weight: 300;
+  margin-top: -10px;
+}
 
 /* ================================================
    HERO
