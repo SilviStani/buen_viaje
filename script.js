@@ -4,6 +4,9 @@
 // Reemplazá esta URL con la de tu Google Apps Script (ver CONFIGURACION_SHEETS.md)
 const SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbyr27nIEA0EV-TdgaS70ZKkhk7dS_gn35_NDWKIqu-D3ItugLbY6Tn6raGJuY_87nuo/exec';
 
+// Cambiar a true el día de la despedida para mostrar los mensajes
+const REVEAL_MESSAGES = false;
+
 // Fecha del evento: Domingo 6 de Septiembre 2026, 13:00 hs (UTC-3, Buenos Aires)
 const EVENT_DATE = new Date('2026-09-06T13:00:00-03:00');
 
@@ -288,14 +291,24 @@ function initForms() {
 }
 
 async function loadMessages() {
-  if (SCRIPT_URL === 'YOUR_GOOGLE_APPS_SCRIPT_URL_HERE') {
-    return; // No cargar en modo demo
+  if (SCRIPT_URL === 'YOUR_GOOGLE_APPS_SCRIPT_URL_HERE') return;
+
+  const container = document.getElementById('messages-container');
+  if (!container) return;
+
+  if (!REVEAL_MESSAGES) {
+    container.innerHTML = `
+      <div class="messages-hidden">
+        <span class="messages-hidden-icon">🤫</span>
+        <p class="messages-hidden-text">¿Estás chicheando?</p>
+        <p class="messages-hidden-sub">Esperá al día de la despedida y develaremos los mensajes.</p>
+      </div>`;
+    return;
   }
-  
+
   try {
     const response = await fetch(SCRIPT_URL);
     const data = await response.json();
-    const container = document.getElementById('messages-container');
     
     if (!data.messages || data.messages.length === 0) {
       container.innerHTML = '<p class="messages-empty">Aún no hay mensajes... ¡Sé el primero! 💛</p>';
