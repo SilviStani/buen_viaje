@@ -383,11 +383,12 @@ section { padding: 100px 0; }
 }
 .detail-highlight {
   font-family: 'Playfair Display', serif;
-  font-size: 2.4rem;
+  font-size: 2rem;
   font-weight: 700;
   color: var(--gold);
   line-height: 1;
-  margin-top: 4px;
+  margin-top: 2px;
+  margin-bottom: 2px;
 }
 .detail-card.featured .detail-highlight { color: var(--gold-light); }
 .detail-address {
