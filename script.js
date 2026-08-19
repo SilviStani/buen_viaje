@@ -233,10 +233,10 @@ function initForms() {
       e.preventDefault();
       const btn    = document.getElementById('rsvp-submit');
       const msgEl  = document.getElementById('rsvp-message');
-      const name   = document.getElementById('rsvp-name').value.trim();
-      const guests = document.getElementById('rsvp-guests').value;
-      const radio  = rsvpForm.querySelector('input[name="attendance"]:checked');
+      const name       = document.getElementById('rsvp-name').value.trim();
+      const radio      = rsvpForm.querySelector('input[name="attendance"]:checked');
       const attendance = radio ? radio.value : 'yes';
+      const guests     = attendance === 'no' ? 0 : document.getElementById('rsvp-guests').value;
 
       if (!name) {
         showMsg(msgEl, 'error', 'Por favor ingresá tu nombre.');
@@ -298,10 +298,10 @@ async function loadMessages() {
 
   if (!REVEAL_MESSAGES) {
     container.innerHTML = `
-      <div class="messages-hidden">
-        <span class="messages-hidden-icon">🤫</span>
-        <p class="messages-hidden-text">¿Estás chicheando?</p>
-        <p class="messages-hidden-sub">Esperá al día de la despedida y develaremos los mensajes.</p>
+      <div class="messages-teaser">
+        <div class="teaser-card">Los mensajes serán develados</div>
+        <div class="teaser-card">durante el evento.</div>
+        <div class="teaser-card teaser-card--surprise"><span>🎉 ¡Sorpresa! 🎉</span></div>
       </div>`;
     return;
   }

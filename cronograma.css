@@ -55,12 +55,12 @@
   position: relative;
   max-width: 720px;
   margin: 0 auto;
-  padding-left: 80px;
+  padding-left: 180px;
 }
 .timeline::before {
   content: '';
   position: absolute;
-  left: 36px;
+  left: 100px;
   top: 8px;
   bottom: 8px;
   width: 2px;
@@ -83,7 +83,7 @@
 
 .timeline-time {
   position: absolute;
-  left: -80px;
+  left: -175px;
   top: 16px;
   width: 68px;
   text-align: right;
@@ -96,7 +96,7 @@
 
 .timeline-dot {
   position: absolute;
-  left: -52px;
+  left: -116px;
   top: 10px;
   width: 32px;
   height: 32px;
@@ -173,23 +173,24 @@
 .crono-link:hover { border-color: rgba(255,255,255,.9); }
 
 /* --- Responsive ---------------------------------- */
-@media (max-width: 600px) {
-  .timeline { padding-left: 56px; }
+@media (max-width: 768px) {
+  .timeline { padding-left: 100px; }
+  .timeline::before { left: 52px; }
+  .timeline-time { left: -95px; width: 56px; font-size: .68rem; }
+  .timeline-dot { left: -68px; }
+}
+@media (max-width: 500px) {
+  .timeline { padding-left: 60px; }
   .timeline::before { left: 20px; }
   .timeline-time {
     position: static;
     display: block;
     text-align: left;
-    margin-bottom: 6px;
+    margin-bottom: 4px;
     width: auto;
-    font-size: .7rem;
+    font-size: .68rem;
   }
-  .timeline-dot {
-    left: -38px;
-    width: 26px;
-    height: 26px;
-    font-size: .85rem;
-  }
-  .timeline-card { padding: 18px 20px; }
+  .timeline-dot { left: -38px; width: 26px; height: 26px; font-size: .85rem; }
+  .timeline-card { padding: 16px 18px; }
   .crono-hero-content { padding-top: 100px; }
 }
