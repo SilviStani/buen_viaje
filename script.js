@@ -299,9 +299,9 @@ async function loadMessages() {
   if (!REVEAL_MESSAGES) {
     container.innerHTML = `
       <div class="messages-teaser">
-        <div class="teaser-card">Los mensajes serán develados</div>
-        <div class="teaser-card">durante el evento.</div>
-        <div class="teaser-card teaser-card--surprise"><span>🎉 ¡Sorpresa! 🎉</span></div>
+        <div class="teaser-card">Gracias por los mensajes!!</div>
+        <div class="teaser-card">Sólo los chicos podrán verlos.</div>
+        <div class="teaser-card teaser-card--surprise"><span>💖 Gracias por tanto cariño!! 💖</span></div>
       </div>`;
     return;
   }
